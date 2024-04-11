@@ -7,11 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import de.stenheimbrodt.core.Test;
+
 public class StensActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        for(int i = 0; i < 100; i++) {
+        for(int i = 0; i < 10; i++) {
             Log.d("Test", "Dies ist eine Testnachricht von meiner Watch!");
         }
         setContentView(R.layout.stensactivity);
@@ -24,6 +26,7 @@ public class StensActivity extends Activity {
             public void onClick(View view) {
                 Log.d("Lina", "Ich liebe dich!");
                 out.setText("Ich liebe dich Lina!");
+                Test t = new Test();
             }
         });
 
