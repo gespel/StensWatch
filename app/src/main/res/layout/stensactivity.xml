@@ -7,14 +7,19 @@
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".StensActivity">
-
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Klick mich" />
-    <EditText
-        android:id="@+id/out"
+        android:text="Enter" />
+    <TextView
+        android:id="@+id/output"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
+
+
 </LinearLayout>

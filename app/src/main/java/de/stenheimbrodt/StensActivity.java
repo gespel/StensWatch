@@ -6,8 +6,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
-import de.stenheimbrodt.core.Test;
+import de.stenheimbrodt.core.CommandLine;
 
 public class StensActivity extends Activity {
     @Override
@@ -16,19 +17,20 @@ public class StensActivity extends Activity {
         for(int i = 0; i < 10; i++) {
             Log.d("Test", "Dies ist eine Testnachricht von meiner Watch!");
         }
+        CommandLine c = new CommandLine();
         setContentView(R.layout.stensactivity);
 
         Button button = findViewById(R.id.button);
-        EditText out = findViewById(R.id.out);
+        TextView output = findViewById(R.id.output);
+        EditText input = findViewById(R.id.input);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("Lina", "Ich liebe dich!");
-                out.setText("Ich liebe dich Lina!");
-                Test t = new Test();
+                String cmd = input.getText().toString();
+                output.setText(c.interpret(cmd));
+                input.setText("");
             }
         });
-
     }
 }
