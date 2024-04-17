@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 import de.stenheimbrodt.core.CommandLine;
 
 public class StensActivity extends Activity {
@@ -28,7 +30,11 @@ public class StensActivity extends Activity {
             @Override
             public void onClick(View view) {
                 String cmd = input.getText().toString();
-                output.setText(c.interpret(cmd));
+                try {
+                    output.setText(c.interpret(cmd));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 input.setText("");
             }
         });
